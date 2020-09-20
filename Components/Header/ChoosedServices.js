@@ -24,6 +24,8 @@ function ChoosedServices() {
             )
         })
         }
+        <h4>TOTAL AMOUNT 0 PLN</h4>
+        <button>ACCEPT</button>
         </>
         
     )
