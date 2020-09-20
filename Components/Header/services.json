@@ -1,0 +1,36 @@
+[
+    {
+        "name" : "Inspections of airframe and its systems",
+        "cost" : 1200
+    },
+
+    {
+        "name" : "Eliminating defects",
+        "cost" : 5000
+    },
+
+    {
+        "name" : "Standard airframe structure inspections",
+        "cost" : 1400
+    },
+
+    {
+        "name" : "Necessary structural repairs",
+        "cost" : 8000
+    },
+
+    {
+        "name" : "Replacement of parts and sub-assemblies",
+        "cost" : 15000
+    },
+
+    {
+        "name" : "Modifications of an airplane and its sub-assemblies",
+        "cost" : 13500
+    },
+
+    {
+        "name" : "Functional tests of airframe and its systems",
+        "cost" : 3000
+    }
+]
