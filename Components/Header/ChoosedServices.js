@@ -8,15 +8,29 @@ function ChoosedServices() {
 
     const [services, setServices] = useState([]);
 
+    useEffect( () => {
+        Services.map(service => {
+            service.checked = false;
+            return service;
+        })
 
+        setServices(Services);
+
+    }, [])
+
+    const serviceChange = (service) => {
+        setServices(Services);
+    }
+
+    
 
     return (
        <>
         <h1>Select your service</h1>
-        {Services.map((service, index) => {
+        {services.map((service, index) => {
             return (
                 <div className="services-main" key={index}>
-                    <input type="checkbox" />
+                    <input type="checkbox" checked={service.checked} onChange={() => serviceChange(service)}/>
                     <img className="aircraft-pic" />
                     <p>{service.name}</p>
                     <p>{service.cost} PLN </p>

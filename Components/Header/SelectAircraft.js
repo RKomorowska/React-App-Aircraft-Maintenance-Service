@@ -5,41 +5,51 @@ import { useEffect } from 'react';
 
 function SelectAircraft() {
 
-    const [data, setData] = useState(false);
+    const [aircrafts, setAircrafts] = useState();
 
 
     useEffect (() => {
-        fetch(`https://fer-api.coderslab.pl/v1/holidays?key=e92601251-c0a2-4s63-v73f-54041195480f&country=PL`)
-        .then (resp => resp.json())
-        .then( holidays => setData(holidays))
-        .catch( err => {
-            console.log('Error!', err);
-          });
+        fetch(`https://aviation-edge.com/v2/public/airplaneDatabase?key=a9b5e1-74ddb7&codeIataAirline=0B`)
+        .then (res => res.json())
+        .then (data => console.log(data))
+        .then (data => setAircrafts(data))
+        .catch( err => console.error(err))
     }, []);
 
+    /*      .then( resp => {
+            return resp.json();
+          }).then( airplaneIataType => {
+            console.log(airplaneIataType);
+            let newAir = {...airplaneIataType};
+            console.log(newAir); 
+          });
 
-    if (!data) {
-        return "Loading..."
-    }
-
+*/ 
 
     return (
        <>
-  
         <h1>Select the aircraft</h1>
-        <select>
-         <option className="select-option" value="">{}</option>
-        <option value=""></option>
-        <option value=""></option>
-        </select>
+        
+       
         <button>Select</button>
 
+        <ul>
+       
+       </ul>
         </>
         
     )
 }
 
 /*
+ {aircrafts.map((aircraft, index) => <li key={index}>{aircraft.codeIataAirline}</li>)}
+
+
+         <option className="select-option" value="">{}</option>
+        <option value=""></option>
+        <option value=""></option>
+
+
 <ul className="list">
 {data.holidays.map((holiday, index) => <li key={index}>{holiday.name}</li>)}
 </ul>
