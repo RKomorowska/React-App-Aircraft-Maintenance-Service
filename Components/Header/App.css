@@ -24,9 +24,31 @@ body {
 .select-aircraft {
     display: flex;
     margin-top: 50px;
+    margin-left: 10px;
     justify-content: space-around;
-    width: 400px;
+    width: 600px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.optionClass {
+    width: 150px;
+    border: 1px solid rgb(103, 211, 103);
+    
+    border-radius: 30px;
+    
+    height: 60px;
+    font-size: 18px;
+}
+
+
+.select-aircraft button {
+    width: 150px;
+    border: 1px solid rgb(103, 211, 103);
+    
+    border-radius: 30px;
+    
+    height: 60px;
+    font-size: 18px;
 }
 
 .selected-ordered-services {

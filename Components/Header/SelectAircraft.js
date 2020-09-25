@@ -1,8 +1,70 @@
-import React from "react";
+
+import React, { Component } from "react";
 import { useState } from 'react';
 import { useEffect } from 'react';
 
 
+class SelectAircraft extends Component {
+        constructor(props) {
+          super(props);
+            this.state =  {
+              items: [],
+              isLoaded: false,
+            }
+        }
+
+        componentDidMount() {
+
+            fetch("https://aviation-edge.com/v2/public/airplaneDatabase?key=a9b5e1-74ddb7&codeIataAirline=0B")
+            .then(res => res.json())
+            .then(json => {
+                  this.setState({
+                    isLoaded: true,
+                    items: json,
+                  })
+            })
+        }
+
+
+        render() {
+
+          let {isLoaded, items} = this.state;
+
+          if(!isLoaded) {
+            return <h4>Loading...</h4>;
+          }
+
+          else { 
+
+          return (
+            <div className="select-aircraft">
+             <h1>Select the aircraft</h1>
+
+             <select>
+             {items.map(item => (
+                <option key={item.airplaneId}>
+                  {item.constructionNumber}
+                </option>
+              ))};
+             </select>
+
+ 
+       
+              <button>Select</button>
+          </div>
+
+          )
+        }
+
+      }
+
+}
+
+
+
+
+
+/*
 function SelectAircraft() {
 
     const [aircrafts, setAircrafts] = useState();
@@ -25,6 +87,7 @@ function SelectAircraft() {
           });
 
 */ 
+/*
 
     return (
        <>

@@ -8,9 +8,10 @@ function ChoosedServices() {
 
     const [services, setServices] = useState([]);
 
+
     useEffect( () => {
         Services.map(service => {
-            service.checked = service.cost === 0 ? true : false;
+            service.checked = service.checked;
             return service;
         })
 
@@ -20,15 +21,7 @@ function ChoosedServices() {
 
     
     const serviceChange = (service) => {
-        setServices(
-            services.map( el => {
-                if(el.nazwa === service.nazwa) {
-                    el.checked === !el.checked;
-                }
-                return el;
-            })
 
-        );
     }
 
     
@@ -48,7 +41,7 @@ function ChoosedServices() {
             )
         })
         }
-        <h4>TOTAL AMOUNT 0 PLN</h4>
+        <h4>TOTAL AMOUNT {0} PLN</h4>
         <button>ACCEPT</button>
         </>
         
