@@ -1,5 +1,10 @@
 [
     {
+        "name" : "Preliminary inspection",
+        "cost" : 0
+    },
+
+    {
         "name" : "Inspections of airframe and its systems",
         "cost" : 1200
     },

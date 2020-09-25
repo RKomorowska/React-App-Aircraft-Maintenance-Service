@@ -11,7 +11,7 @@ function OrderedServices() {
     return (
        <>
   
-        <h1>Ordered services</h1>
+        <h1>ORDER</h1>
       
         </>
         

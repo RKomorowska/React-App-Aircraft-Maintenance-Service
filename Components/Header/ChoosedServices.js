@@ -10,7 +10,7 @@ function ChoosedServices() {
 
     useEffect( () => {
         Services.map(service => {
-            service.checked = false;
+            service.checked = service.cost === 0 ? true : false;
             return service;
         })
 
@@ -18,11 +18,21 @@ function ChoosedServices() {
 
     }, [])
 
+    
     const serviceChange = (service) => {
-        setServices(Services);
+        setServices(
+            services.map( el => {
+                if(el.nazwa === service.nazwa) {
+                    el.checked === !el.checked;
+                }
+                return el;
+            })
+
+        );
     }
 
     
+
 
     return (
        <>
@@ -33,7 +43,7 @@ function ChoosedServices() {
                     <input type="checkbox" checked={service.checked} onChange={() => serviceChange(service)}/>
                     <img className="aircraft-pic" />
                     <p>{service.name}</p>
-                    <p>{service.cost} PLN </p>
+                    {service.cost === 0 ? <p>FOC</p> : <p>{service.cost} PLN </p>}
                 </div>
             )
         })
