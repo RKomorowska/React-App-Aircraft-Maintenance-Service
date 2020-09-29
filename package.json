@@ -11,6 +11,12 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.7.0",
     "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "sass": "^1.26.11",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
@@ -19,5 +25,8 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "whatwg-fetch": "^3.4.1"
-  }
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }
