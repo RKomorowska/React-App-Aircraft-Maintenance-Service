@@ -37,7 +37,7 @@ class SelectAircraft extends Component {
           else { 
 
           return (
-            <div className="select-aircraft">
+            <div className="select-aircraft-content">
              <h1>Select the aircraft</h1>
 
              <select>

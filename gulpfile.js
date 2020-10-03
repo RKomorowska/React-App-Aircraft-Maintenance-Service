@@ -28,10 +28,12 @@ function watcher(done) {
   done();
 }
 
+
 function reload(done) {
   browserSync.reload();
   done();
 }
+
 
 exports.sass = gulp.parallel(compileSass);
 exports.default = gulp.parallel(compileSass, watcher);

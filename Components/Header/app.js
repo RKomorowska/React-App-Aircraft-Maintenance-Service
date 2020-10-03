@@ -9,10 +9,12 @@ import OrderedServices from "./OrderedServices";
 const App = () => <Header/>
 ReactDOM.render(<App/>, document.getElementById("header"));
 
+/*
+
 const AppSelect = () => <SelectAircraft/>
 ReactDOM.render(<AppSelect/>, document.getElementById("select-aircraft"));
 
-/*
+
 
 const AppChoosed = () => <ChoosedServices/>
 ReactDOM.render(<AppChoosed/>, document.getElementById("choosed-services"));

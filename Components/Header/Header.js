@@ -1,6 +1,7 @@
 import React, { useState} from "react";
 import ChoosedServices from "./ChoosedServices";
 import OrderedServices from "./OrderedServices";
+import SelectAircraft from "./SelectAircraft";
 
 
 function Header() {
@@ -14,19 +15,32 @@ function Header() {
 
 
     return (
-        <div className="main-content">
+        <div>
 
-        <div className="main-title" id="app">
-                <h1>AIRCRAFT MAINTENANCE SERVICE</h1>
+        <div id="app">
+               
         </div>
 
-        <div>
+       
+            <div className="select-aircraft">
+            <SelectAircraft/>
+            </div>
+
+            <div className="main-content">
+
+            <div className="choosed-services">
+                <h2>CHOOSE YOUR SERVICE</h2>
             <ChoosedServices getOrder={getOrder}/>
+            </div>
+
+            <div className="ordered-services">
             <OrderedServices newOrder={order}/>
+            </div>
         </div>
 
         </div>
     );
 }
+
 
 export default Header
