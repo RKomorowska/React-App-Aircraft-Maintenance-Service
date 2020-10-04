@@ -19,6 +19,11 @@ function OrderedServices(props) {
         setCost(costAll);
     }, [neworder])
 
+    const removeOrder = (indx) => {
+        let remOrder = neworder.filter((order, index) => index !== indx);
+        setNeworder(remOrder);
+    }
+
     return (
        <>
         <h1>ORDER</h1>
@@ -29,6 +34,7 @@ function OrderedServices(props) {
                         {index + 1}# order
                         ({order.services.length} SERVICES)
                     </h3>
+                    <button onClick={() => removeOrder(index)}>REMOVE</button>
 
                     <p>-------------------------</p>
             <p>TOTAL AMOUNT TO PAY: {cost} PLN</p>
