@@ -1,4 +1,6 @@
-import React from "react";
+import React, { createContext } from "react";
+import { useState } from 'react';
+import { useEffect } from 'react';
 import ReactDOM from "react-dom";
 import Header from "./Header";
 import Basket from "./Basket";
@@ -26,16 +28,28 @@ ReactDOM.render(<AppOrdered/>, document.getElementById("ordered-services"));
 
 */
 
+const MainContext = createContext();
+export const CtxConsumer = MainContext.Consumer;
+const CtxProvider = MainContext.Provider;
+
+
 function Routing() {
+
+    const [ basket, setBasket ] = useState(0);
+
+
     return (
         <BrowserRouter>
-        <Switch>
+            <CtxProvider value={{basket: basket}}>
+        
             <Route exact path="/" component={Header} />
             <Route exact path="/Basket" component={Basket} />
-            </Switch>
+            
+            </CtxProvider>
         </BrowserRouter>
     )
 }
 
 
 ReactDOM.render(<Routing />, document.getElementById("root"));
+

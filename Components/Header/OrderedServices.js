@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { withRouter } from "react-router-dom";
 
 
 function OrderedServices(props) {
@@ -24,6 +25,10 @@ function OrderedServices(props) {
         setNeworder(remOrder);
     }
 
+    const goToPay = () => {
+        props.history.push("/Basket");
+    }
+
     return (
        <>
         <h1>ORDER</h1>
@@ -38,6 +43,7 @@ function OrderedServices(props) {
 
                     <p>-------------------------</p>
             <p>TOTAL AMOUNT TO PAY: {cost} PLN</p>
+            <button onClick={() => goToPay()}>ACCEPT ORDER</button>
                 </div>
             )
         })}
@@ -47,4 +53,4 @@ function OrderedServices(props) {
 }
 
 
-export default OrderedServices
+export default withRouter(OrderedServices);
