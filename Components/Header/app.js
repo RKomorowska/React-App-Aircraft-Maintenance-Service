@@ -37,10 +37,13 @@ function Routing() {
 
     const [ basket, setBasket ] = useState(0);
 
+    const refresh = (data) => {
+        setBasket(data);
+    }
 
     return (
         <BrowserRouter>
-            <CtxProvider value={{basket: basket}}>
+            <CtxProvider value={{basket: basket, refresh: refresh}}>
         
             <Route exact path="/" component={Header} />
             <Route exact path="/Basket" component={Basket} />

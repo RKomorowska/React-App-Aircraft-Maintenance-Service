@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { withRouter } from "react-router-dom";
+import { CtxConsumer } from "./app";
 
 
 function OrderedServices(props) {
@@ -25,30 +26,36 @@ function OrderedServices(props) {
         setNeworder(remOrder);
     }
 
-    const goToPay = () => {
+    const goToPay = (ctx) => {
+        ctx.refresh(cost);
         props.history.push("/Basket");
     }
 
-    return (
-       <>
-        <h1>ORDER</h1>
-        {neworder.map( (order, index) => {
-            return (
-                <div key={index}>
-                    <h3>
-                        {index + 1}# order
-                        ({order.services.length} SERVICES)
-                    </h3>
-                    <button onClick={() => removeOrder(index)}>REMOVE</button>
 
-                    <p>-------------------------</p>
-            <p>TOTAL AMOUNT TO PAY: {cost} PLN</p>
-            <button onClick={() => goToPay()}>ACCEPT ORDER</button>
-                </div>
-            )
-        })}
-        </>
-        
+    return (
+        <CtxConsumer>
+            { context => (
+                 <>
+                 <h1>ORDER</h1>
+                 {neworder.map( (order, index) => {
+                     return (
+                         <div key={index}>
+                             <h3>
+                                 {index + 1}# order
+                                 ({order.services.length} SERVICES)
+                             </h3>
+                             <button onClick={() => removeOrder(index)}>REMOVE</button>
+         
+                             <p>-------------------------</p>
+                     <p>TOTAL AMOUNT TO PAY: {cost} PLN</p>
+                     <button onClick={() => goToPay(context)}>ACCEPT ORDER</button>
+                         </div>
+                     )
+                 })}
+                 </>
+            )}
+      
+        </CtxConsumer>
     )
 }
 
