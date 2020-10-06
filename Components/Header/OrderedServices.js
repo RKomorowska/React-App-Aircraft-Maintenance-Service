@@ -5,10 +5,14 @@ import { withRouter } from "react-router-dom";
 import { CtxConsumer } from "./app";
 
 
+
+
 function OrderedServices(props) {
 
     const [cost, setCost] = useState(0);
     const [neworder, setNeworder] = useState([]);
+
+
 
     useEffect( () => {
         if(props.newOrder) { 
@@ -32,6 +36,20 @@ function OrderedServices(props) {
     }
 
 
+    useEffect( () => {
+        const dataLS = localStorage.getItem("neworder");
+        if (dataLS) {
+            setNeworder(JSON.parse(dataLS));
+        }
+    }, [])
+
+
+    useEffect( () => {
+        localStorage.setItem("neworder", JSON.stringify(neworder))
+    },)
+    
+
+
     return (
         <CtxConsumer>
             { context => (
@@ -52,6 +70,7 @@ function OrderedServices(props) {
                          </div>
                      )
                  })}
+                        
                  </>
             )}
       
