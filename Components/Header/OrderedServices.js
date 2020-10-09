@@ -20,10 +20,14 @@ function OrderedServices(props) {
     }
     }, [props.newOrder])
 
+    
+
     useEffect( () => {
         let costAll = neworder.reduce( (sum, order) => sum + order.cost, 0);
         setCost(costAll);
     }, [neworder])
+
+    
 
     const removeOrder = (indx) => {
         let remOrder = neworder.filter((order, index) => index !== indx);
@@ -57,15 +61,16 @@ function OrderedServices(props) {
                  <h1>ORDER</h1>
                  {neworder.map( (order, index) => {
                      return (
-                         <div key={index}>
+                         <div className="choosed-order-localS" key={index}>
                              <h3>
-                                 {index + 1}# order
-                                 ({order.services.length} SERVICES)
+                                 {index + 1}# YOU ARE ORDERING  
+                                <p></p>
+                                 {order.services.length} SERVICES
                              </h3>
-                             <button onClick={() => removeOrder(index)}>REMOVE</button>
+                             <button onClick={() => removeOrder(index)}>REMOVE ORDER</button>
          
-                             <p>-------------------------</p>
-                     <p>TOTAL AMOUNT TO PAY: {cost} PLN</p>
+                             <p></p>
+                     
                      <button onClick={() => goToPay(context)}>ACCEPT ORDER</button>
                          </div>
                      )
@@ -78,5 +83,5 @@ function OrderedServices(props) {
     )
 }
 
-
+/*<p>TOTAL AMOUNT TO PAY: {cost} PLN</p>*/
 export default withRouter(OrderedServices);

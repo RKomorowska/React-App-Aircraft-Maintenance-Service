@@ -15,9 +15,12 @@ const Basket = (props) => {
        <CtxConsumer>
            {context => (
                <>
-               <h1>YOUR ORDERS</h1>
-                <h2>TOTAL PAYMENT: {context.basket} PLN</h2>
-               <button onClick={() => backToOrders()}>BACK TO ORDERS</button>
+               <div className="basket-content">
+               <h1>YOUR ORDER</h1>
+                <h2>ORDER VALUE: {context.basket} PLN</h2>
+                <button>PAY</button>
+               <button id="basket-button" onClick={() => backToOrders()}>BACK TO ORDERS</button>
+               </div>
                </>
            )}
         </CtxConsumer>

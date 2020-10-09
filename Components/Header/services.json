@@ -1,41 +1,49 @@
 [
     {
         "name" : "Preliminary inspection",
-        "cost" : 0
+        "cost" : 0,
+        "picture" : "./assets/pic1.jpeg"
     },
 
     {
         "name" : "Inspections of airframe and its systems",
-        "cost" : 1200
+        "cost" : 1200,
+        "picture" : "./assets/pic2.jpeg"
     },
 
     {
         "name" : "Eliminating defects",
-        "cost" : 5000
+        "cost" : 5000,
+        "picture" : "./assets/pic3.jpeg"
     },
 
     {
         "name" : "Standard airframe structure inspections",
-        "cost" : 1400
+        "cost" : 1400,
+        "picture" : "./assets/pic4.jpeg"
     },
 
     {
         "name" : "Necessary structural repairs",
-        "cost" : 8000
+        "cost" : 8000,
+        "picture" : "./assets/pic5.jpeg"
     },
 
     {
         "name" : "Replacement of parts and sub-assemblies",
-        "cost" : 15000
+        "cost" : 15000,
+        "picture" : "./assets/pic6.jpeg"
     },
 
     {
         "name" : "Modifications of an airplane and its sub-assemblies",
-        "cost" : 13500
+        "cost" : 13500,
+        "picture" : "./assets/pic7.jpeg"
     },
 
     {
         "name" : "Functional tests of airframe and its systems",
-        "cost" : 3000
+        "cost" : 3000,
+        "picture" : "./assets/pic8.jpeg"
     }
 ]

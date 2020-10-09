@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 function ChoosedServices(props) {
 
     const [services, setServices] = useState([]);
-
     const [cost, setCost] = useState(0);
 
 
