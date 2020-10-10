@@ -1,35 +1,98 @@
 body {
-  background-color: beige;
+  background-color: #dfe4f0;
 }
 
 #header {
   display: flex;
-  text-align: center;
+  flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   background-color: beige;
   color: #7ad47a;
-  height: 150px;
   margin-top: 50px;
   font-size: 24px;
-  border: 1px solid #67d367;
   border-radius: 20px;
-  height: 200px;
+  height: 1500px;
   box-shadow: grey;
   margin-bottom: 100px;
 }
 
-.main-title h1 {
-  margin-top: 80px;
+#header-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-header-title {
+  display: flex;
+  justify-content: center;
+}
+
+.header-title {
+  border-radius: 30px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 44px;
+  width: 1050px;
+  margin-top: 20px;
+  margin-bottom: -90px;
+  height: 100px;
+}
+
+.header-title h3 {
+  margin-top: 19px;
+  color: #bf08c5;
+}
+
+.header-pic {
+  display: flex;
+  justify-content: center;
+}
+
+.main-app-title {
+  margin-top: 20px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 44px;
+  color: black;
+  border: 8px solid white;
+  border-radius: 40px;
+  height: 680px;
+  width: 1450px;
+  background-size: cover;
+  background-position-y: -50px;
+  display: flex;
+  justify-content: center;
+  -webkit-filter: contrast(120%);
+          filter: contrast(120%);
+  background-image: url("./assets/AdobeStock_251323238.jpeg");
+}
+
+.main-app-title h3 {
+  margin-top: 520px;
+  color: #1b0249;
+  font-size: 60px;
+  border-bottom: 3px solid #1b0249;
 }
 
 .select-aircraft {
   display: flex;
-  margin-top: 50px;
-  margin-left: 10px;
+  margin-top: 0px;
+  margin-left: -50px;
   justify-content: space-around;
-  width: 600px;
+  width: 750px;
   font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid #1b0249;
+  border-radius: 30px;
+  padding: 20px;
+  font-size: 18px;
+  margin-bottom: 30px;
+  background-color: #02013b;
+}
+
+.select-aircraft-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .optionClass {
@@ -37,14 +100,23 @@ body {
   border: 1px solid #67d367;
   border-radius: 30px;
   height: 60px;
-  font-size: 18px;
+}
+
+.select-aircraft-content h1 {
+  font-size: 32px;
+  text-transform: uppercase;
+  margin-right: 25px;
+  color: #bf08c5;
 }
 
 .select-aircraft button {
-  width: 150px;
-  border: 1px solid #67d367;
+  width: 140px;
+  border: 1px solid #1b0249;
+  margin-left: 20px;
   border-radius: 30px;
-  height: 60px;
+  background-color: #bf08c5;
+  color: #1b0249;
+  height: 40px;
   font-size: 18px;
 }
 
@@ -59,15 +131,24 @@ body {
   margin-right: 30px;
 }
 
+.main-content {
+  margin-left: -70px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
 .aircraft-pic {
-  width: 70px;
-  height: 70px;
-  background-image: url("./assets/3423.jpg");
+  width: 60px;
+  height: 60px;
   background-size: cover;
-  background-position-x: -15px;
+  background-repeat: no-repeat;
+  border: 1px solid #1b0249;
+  border-radius: 80px;
+  background-position-x: 0px;
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 10px;
+  background-image: url("./assets/pic7.jpeg");
 }
 
 .services-main {
@@ -81,24 +162,111 @@ body {
   font-weight: 600;
 }
 
-/*
-
-#choosed-services {
-    margin-left: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    border: 1px solid rgb(103, 211, 103);
-    padding: 20px;
-    border-radius: 20px;
+.choosed-services {
+  margin-left: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 5px solid #1b0249;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgba(131, 143, 247, 0.986);
 }
 
-#ordered-services {
-    border: 1px solid rgb(103, 211, 103);
-    padding: 20px;
-    margin-left: 20px;
-    border-radius: 20px;
-    width: 250px;
-    text-align: center;
+.choosed-services h2 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-*/
+.choosed-services h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  margin-left: 30px;
+}
+
+.choosed-services button {
+  width: 140px;
+  border: 1px solid black;
+  margin-left: 50px;
+  border-radius: 30px;
+  background-color: #bf08c5;
+  color: blanchedalmond;
+  height: 40px;
+  font-size: 18px;
+}
+
+.ordered-services {
+  border: 5px solid #1b0249;
+  padding: 20px;
+  margin-left: 20px;
+  border-radius: 20px;
+  width: 500px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(131, 143, 247, 0.986);
+}
+
+.ordered-services h1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.ordered-services button {
+  width: 140px;
+  border: 1px solid black;
+  margin-left: 20px;
+  border-radius: 30px;
+  background-color: #bf08c5;
+  color: blanchedalmond;
+  height: 40px;
+  font-size: 18px;
+}
+
+.choosed-order-localS {
+  border: 3px solid blanchedalmond;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.main-content {
+  display: flex;
+}
+
+#root {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#root button {
+  width: 140px;
+  border: 1px solid black;
+  margin-left: 20px;
+  border-radius: 30px;
+  background-color: #bf08c5;
+  color: blanchedalmond;
+  height: 50px;
+  font-size: 18px;
+  outline: none;
+}
+
+#basket-button {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.basket-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid #1b0249;
+  border-radius: 30px;
+  width: 500px;
+  height: 370px;
+  background-color: rgba(131, 143, 247, 0.986);
+}
+
+.basket-content h1 {
+  margin-top: 60px;
+}
 /*# sourceMappingURL=main.css.map */
